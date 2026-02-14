@@ -1,0 +1,124 @@
+body {
+  background: linear-gradient(135deg, #f8c3e1, #b58acb);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #4b2e72;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contenedor {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 100vh;
+}
+
+#botonAmor {
+  background: linear-gradient(45deg, #ff5c8a, #b85edb);
+  border: none;
+  padding: 15px 40px;
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(184, 94, 219, 0.5);
+  transition: background 0.3s ease;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+#botonAmor:hover {
+  background: linear-gradient(45deg, #b85edb, #ff5c8a);
+}
+
+#mensajes {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 10;
+}
+
+.mensaje {
+  position: absolute;
+  background-color: rgba(255, 182, 193, 0.85);
+  padding: 14px 24px;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5a2e6f;
+  max-width: 220px;
+  user-select: none;
+  box-shadow: 0 4px 8px rgba(184, 94, 219, 0.3);
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+  word-wrap: break-word;
+}
+
+.mensaje.despedirse {
+  opacity: 0;
+}
+
+#corazones {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.corazon {
+    position: absolute;
+    font-size: 24px;
+    animation: flotarCorazon 4s linear forwards;
+    opacity: 0.8;
+    user-select: none;
+    color: #b85edb; /* 💜 Morado pastel */
+    pointer-events: none;
+    z-index: 9999;
+}
+
+
+@keyframes flotarCorazon {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-150vh);
+    opacity: 0;
+  }
+}
+
+.mensajeOculto {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: rgba(248, 195, 225, 0.15);
+  border-radius: 10px;
+  user-select: none;
+  pointer-events: auto;
+  z-index: 9999;
+  transition: background 0.3s ease;
+}
+
+.mensajeOculto:hover {
+  background: rgba(248, 195, 225, 0.3);
+}
